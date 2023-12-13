@@ -1,50 +1,44 @@
-import React from 'react'
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
 import Navbar from '../../components/Navbar/navbar'
-
+import p1 from '../../assets/p1.jpg'
+import p2 from '../../assets/p2.jpg'
 import './about.css'
-import image35 from '../../assets/image35.svg'
-import traveller from '../../assets/traveller.png'
-import flight from '../../assets/flight.png'
 
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
+import { FaPlane, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
-export default function About() {
+const AboutUs = () => {
   return (
-    <div className='About'>
-        <Navbar/> 
-        <div className='about-container'>
-          <div className='about-content'>
-            <h1>
-              About us
-            </h1>
-           <img id='image1' src={image35} />
-           <div className='para'>
-           <p><p>At WorldAir,</p> <br />we are passionate about transforming the way you explore the world. Our enthusiasm lies in reshaping your exploration of the world. We aspire to curate a travel experience that transcends the conventional, turning each journey into a gateway for meaningful discovery and connection. 
-Embark your journey with us and let WorldAir be the wings that carry your ambitions to new horizons. <br />Discover a world of convenience, connectivity, and unparalleled service – experience business travel like never before</p>
-           </div>
-
+    <div>
+      <Navbar/> 
+      <Carousel fade>
+      <Carousel.Item>
+        <img className="d-block w-100" src={p1} alt="First slide" />
+        <Carousel.Caption className="text-animation">
+          <div className="text-center">
+            <h1 className="animated-text">Welcome to TravelSite</h1>
+            <h1 className="animated-text">Discover amazing destinations with us!</h1>
+            <h1 className="animated-text">Plan your dream vacation today.</h1>
           </div>
-          <div className='about-elements'>
-            <div className='elements'>
-              <img id='image2' src={traveller}/>
-            <img id='image3' src={flight} /></div>
-            
-
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src={p2} alt="Second slide" />
+        <Carousel.Caption className="text-animation">
+          <div className="text-center">
+            <h1 className="animated-text">Explore the World</h1>
+            <h1 className="animated-text">Experience new adventures with us!</h1>
+            <h1 className="animated-text">Book your journey now.</h1>
           </div>
-          
-          </div>
-          <div className='footer'>
-            <div className='footercontent'>
-              
-            </div>
+        </Carousel.Caption>
+      </Carousel.Item>
+      {/* Add more Carousel.Items as needed */}
+    </Carousel>
 
-          </div>
-          
+    </div>
+  );
+};
 
-        </div>
-      
-       
-
-     
-  )
-}
+export default AboutUs;

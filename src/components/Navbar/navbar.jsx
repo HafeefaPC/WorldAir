@@ -1,35 +1,26 @@
-import React from "react";
-import logo from "../../assets/logo.png"
-import './navbar.css';
-import { BrowserRouter as Router,Routes,Link ,Route} from "react-router-dom";
+import React from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import logo from '../../assets/logo.png'
+import './navbar.css'
 
-
-
-
-
-const Navbar = () => {
+const NavigationBar = () => {
   return (
-    <div className="navi" style={{ height: 64, position: 'relative', background: '#315573'}}>
-  <div>
-  <nav>
-    <Link><a>Home</a></Link>
-    <Link><a>About</a></Link>
-    <Link><a>Contact</a></Link>
-    <Link><a>Services</a></Link>
-    <Link><a>Gallery</a></Link>
-
-    
-   
-
-  </nav>
-  </div>
-
-  <img style={{width: 150, height: 54, left: 37.47, top: 14.44, position: 'absolute'}} src={logo} />
-
-  </div>
-
-
+    <Navbar collapseOnSelect expand="lg" bg="black" variant="dark" >
+      <Container>
+        <Navbar.Brand href="#home" className="mr-auto"><img id='logo' src={logo} alt="" /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link href="#service">Service</Nav.Link>
+            <Nav.Link href="#gallery">Gallery</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavigationBar;
