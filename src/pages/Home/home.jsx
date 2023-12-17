@@ -3,12 +3,15 @@ import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
 import { Carousel } from "react-bootstrap";
 import home from "../../assets/home.jpg";
-
-// import p2 from "../../assets/p2.jpg";
+import img2 from "../../assets/img2.png";
 import curve from "../../assets/curve.svg";
 import ticket from "../../assets/ticket.svg";
 import travel from "../../assets/travel.svg";
 import card from "../../components/card/card";
+import Servicecard from "../../components/Sevice/serviccarde";
+import img1 from "../../assets/img1.png";
+import img3 from "../../assets/img3.png";
+import img4 from "../../assets/img4.png";
 
 const Home = () => {
   return (
@@ -37,7 +40,7 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <div className="bg-white w-full h-screen flex flex-col items-center">
+      <div className="bg-white w-full h-screen flex flex-col  items-center">
         <div className="flex space-x-4 p-4">
           <h1 className="text-4xl font-bold tracking-wide">About Us</h1>
           <img src={ticket} className="" alt="Ticket" />
@@ -56,10 +59,44 @@ const Home = () => {
           {/* <button>Learn More </button> */}
           <img src={travel} className="" alt="Travel" />
         </div>
-</div>
-<div>
+      </div>
+      <div className="bg-white w-full h-screen flex flex-col items-center">
         <h1>Services</h1>
-        <card name="" img=" " para=" " />
+
+        <div>
+          <div className="  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-7 gap-5 ">
+            <Servicecard
+              style="flex justify-between gap-1/2 items-center rounded-3xl bg-[#004E89] h-60 w-[100%]"
+              name="Accommodation"
+              img={img1}
+              imgstyle="absolute lg:ml-[11.9rem] mt-[8.4rem] sm:mr-[22rem] rounded-3xl"
+              para="Hotel Reservations Service ApartmentsHouseboat accommodationHome Stays"
+            />
+            <Servicecard
+              style="flex justify-between gap-1/2 items-center w-[180%] rounded-3xl bg-[#5885AF] h-60"
+              name="Tours"
+              img={img2}
+              imgstyle="absolute lg:ml-[19rem] mt-[2rem] sm:mr-[22rem] rounded-3xl"
+              para="Inbound & Outbound ToursIncentive ToursVillage ToursSpices & Tea Plantation Tours"
+            />
+          </div>
+          <div className="  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-7 ">
+            <Servicecard
+              style="flex justify-between gap-1/2 items-center w-[180%] rounded-3xl bg-[#60A3D9] h-60"
+              name="Transportation Essentials"
+              img={img3}
+              imgstyle="absolute lg:ml-[19rem] mt-[2rem] sm:mr-[22rem] rounded-3xl"
+              para="Car/Coach RentalsAir TicketsTrain Ticketing"
+            />
+            <Servicecard
+              style="flex justify-between gap-1/2 items-center  rounded-3xl bg-[#125D95] h-60 w-[100%]"
+              name="Other Services"
+              img={img4}
+              imgstyle="absolute lg:ml-[9.8rem] mt-[9.4rem] sm:mr-[22rem] rounded-3xl"
+              para="ConferencesE - Ticketing"
+            />
+          </div>
+        </div>
       </div>
 
       <Footer />
