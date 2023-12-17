@@ -17,7 +17,7 @@ function Servicecard({ name, img, para, style,imgstyle }) {
   return (
     <div>
       <div className={style}>
-        <div className="flex flex-col ml-3 mb-[5rem] lg:gap-0 ">
+        <div className="flex flex-col ml-3 mb-[5rem]">
           <p className="font-montserrat text-[24px] font-semibold leading-29 tracking-wider text-white">
             {name}
           </p>
