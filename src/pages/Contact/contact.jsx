@@ -1,12 +1,13 @@
 import React from 'react';
 import './Contact.css';
+import contact from "../../assets/Images/contact.jpg"
 
 const Contact = () => (
   <div className="background-container">
-    {/* Your content goes here */}
+   
     <div className="transparent-rectangle">
-      {/* Your content goes here */}
-      <img src="C:/Users/91812/OneDrive/Desktop/WorldAir/Images/contact.jpg" alt="Contact Background" />
+  
+      <img src={contact} alt="Contact Background" />
       <h1>We're here for you</h1>
       <div className="contact-info">
         <div className="contact-item">
