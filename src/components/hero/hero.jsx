@@ -1,65 +1,72 @@
-import React, { useState } from "react";
-import { useSpring, animated } from "react-spring";
-import { Carousel } from "react-bootstrap"; // assuming you're using react-bootstrap for Carousel
-import Home from "../../assets/home.jpg"
+import React, { useEffect } from "react";
+import "./hero.css"; // Assuming your styles are in a file named style.css
 
-const AnimatedCarousel = () => {
-  const [index, setIndex] = useState(0);
+const Hero = () => {
+  useEffect(() => {
+    const mountainRight = document.querySelector("#mountain_right");
+    const cloud1 = document.querySelector("#clouds_1");
+    const cloud2 = document.querySelector("#clouds_2");
+    const text = document.querySelector("#text");
+    const man = document.querySelector("#man");
 
-  // Define the spring animation styles
-  const springStyles = useSpring({
-    opacity: 1,
-    from: { opacity: 0 },
-  });
+    const handleScroll = () => {
+      let value = window.scrollY;
+      mountainRight.style.left = `${value / 0.7}px`;
+      cloud1.style.left = `${value * 2}px`;
+      cloud2.style.left = `-${value * 2}px`;
+      text.style.bottom = `-${value}px`;
+      man.style.height = `${window.innerHeight - value}px`;
+    };
 
-  // Handle slide change
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <animated.img
-          className="d-block w-100 h-auto"
-          src={Home}
-          alt="First slide"
-          style={springStyles}
+    <div className="bg-white w-full h-screen flex flex-col items-center ">
+      <section id="top">
+        <img
+          src="https://aryan-tayal.github.io/Mountains-Parallax/bg.jpg"
+          id="bg"
+          alt="Background"
         />
-        <Carousel.Caption className="text-animation">
-          <div className="text-center">
-            <animated.h1 className="animated-text" style={springStyles}>
-              World Air Tours and Travels
-            </animated.h1>
-            <animated.h1 className="animated-text" style={springStyles}>
-              "Where Adventure Takes Flight!"
-            </animated.h1>
-          </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <animated.img
-          className="d-block w-100 h-auto"
-          src={Home}
-          alt="Second slide"
-          style={springStyles}
+        <h2 id="text">WolrdAir</h2>
+        <img
+          src="https://aryan-tayal.github.io/Mountains-Parallax/man.png"
+          id="man"
+          alt="Man"
         />
-        <Carousel.Caption className="text-animation">
-          <div className="text-center">
-            <animated.h1 className="animated-text" style={springStyles}>
-              Explore the World
-            </animated.h1>
-            <animated.h1 className="animated-text" style={springStyles}>
-              Experience new adventures with us!
-            </animated.h1>
-            <animated.h1 className="animated-text" style={springStyles}>
-              Book your journey now.
-            </animated.h1>
-          </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+        <img
+          src="https://aryan-tayal.github.io/Mountains-Parallax/clouds_1.png"
+          id="clouds_1"
+          alt="Clouds 1"
+        />
+        <img
+          src="https://aryan-tayal.github.io/Mountains-Parallax/clouds_2.png"
+          id="clouds_2"
+          alt="Clouds 2"
+        />
+        <img
+          src="https://aryan-tayal.github.io/Mountains-Parallax/mountain_left.png"
+          id="mountain_left"
+          alt="Mountain Left"
+        />
+        <img
+          src="https://aryan-tayal.github.io/Mountains-Parallax/mountain_right.png"
+          id="mountain_right"
+          alt="Mountain Right"
+        />
+      </section>
+      <section id="sec">
+        <h2>Welcome to the WorldAir</h2>
+        <p>World Air Tours and Travels Where Adventure Takes Flight!</p>
+      </section>
+    </div>
   );
 };
 
-export default AnimatedCarousel;
+export default Hero;

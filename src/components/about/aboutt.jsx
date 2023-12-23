@@ -24,19 +24,30 @@ const Aboutt = () => {
   const travelStyles = useSpring(hoverTravelStyles);
 
   return (
-    <div className="bg-white w-full flex flex-col items-center">
-      <div className="flex space-x-4 p-4">
-        <h1 className="text-4xl font-bold tracking-wide">About Us</h1>
-        <img src={ticket} className="" alt="Ticket" />
+    <div className="bg-white w-full h-full flex flex-col items-center relative">
+      {/* Transparent box with light blue background covering the entire page */}
+      <div className="absolute inset-0 bg-blue-100 opacity-80 z-0"></div>
+
+      <div className="flex items-center space-x-4 p-4 z-10 relative">
+        <h1 className="text-4xl font-bold tracking-wide z-10">About Us</h1>
+        <img src={ticket} className="z-10 relative" alt="Ticket" />
       </div>
-      <img src={curve} className="" alt="Curve" />
+      <img
+        src={curve}
+        className="z-10 relative"
+        alt="Curve"
+        style={{
+          position: "relative", // Ensures that the curve is contained within the transparent box
+          zIndex: 10, // Places the curve on top of the transparent box
+        }}
+      />
       <div
-        className="flex items-center justify-between gap-[10rem]"
+        className="flex items-center justify-between gap-[10rem] z-10 relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <animated.div
-          className="rounded-md border-2 border-blue-900 p-4 flex flex-col gap-5 items-center"
+          className="rounded-md border-2 border-blue-900 p-4 flex flex-col gap-5 items-center z-10 relative"
           style={{
             transform: boxStyles.translateX.interpolate(
               (x) => `translateX(${x}px)`
@@ -58,7 +69,7 @@ const Aboutt = () => {
         </animated.div>
         <animated.img
           src={travel}
-          className=""
+          className="z-10 relative"
           alt="Travel"
           style={{
             transform: travelStyles.translateX.interpolate(
