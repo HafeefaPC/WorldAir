@@ -4,11 +4,11 @@ import Footer from "../../components/Footer/footer";
 import { Carousel } from "react-bootstrap";
 import home from "../../assets/home.jpg";
 import img2 from "../../assets/img2.png";
-import curve from "../../assets/curve.svg";
-import ticket from "../../assets/ticket.svg";
-import travel from "../../assets/travel.svg";
+
 import Servicecard from "../../components/Sevice/serviccarde";
 import Package from "../../components/package/package";
+import Aboutt from "../../components/about/aboutt";
+import Hero from "../../components/hero/hero";
 import img1 from "../../assets/img1.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
@@ -20,55 +20,14 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Carousel fade>
-        <Carousel.Item>
-          <img className="d-block w-100 h-auto" src={home} alt="First slide" />
-          <Carousel.Caption className="text-animation">
-            <div className="text-center">
-              <h1 className="animated-text"> World Air Tours and Travels </h1>
-              <h1 className="animated-text">"Where Adventure Takes Flight!"</h1>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100 h-auto" src={home} alt="second slide" />
-          <Carousel.Caption className="text-animation">
-            <div className="text-center">
-              <h1 className="animated-text">Explore the World</h1>
-              <h1 className="animated-text">
-                Experience new adventures with us!
-              </h1>
-              <h1 className="animated-text">Book your journey now.</h1>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-      <div className="bg-white w-full flex flex-col  items-center">
-        <div className="flex space-x-4 p-4">
-          <h1 className="text-4xl font-bold tracking-wide">About Us</h1>
-          <img src={ticket} className="" alt="Ticket" />
-        </div>
-        <img src={curve} className=" " alt="Curve" />
-        <div className="flex  items-center justify-between gap-[10rem]">
-          <div className="flex flex-col gap-5 items-center">
-            <p className="text-xl text-center ">
-              Here we arrive as your trusted companion <br /> in the world of
-              exploration, where every second counts <br /> and every connection
-              matters. In the dynamic
-              <br />
-              realm of global commerce, where opportunities <br /> are boundless
-              and distances are mere numbers, <br /> we elevate your journey to
-              new heights.
-            </p>
-            <button className="border-2 border-[#005FA8] w-1/2 p-2  text-[#005FA8] rounded-3xl">
-              Learn More
-            </button>
-          </div>
-          <img src={travel} className="" alt="Travel" />
-        </div>
-      </div>
+      <div className="bg-white h-1"></div>
+      <Hero />
+      <div className="bg-white h-5"></div>
+      <Aboutt />
+      <div className="bg-white h-2"></div>
       <div className="bg-white w-full h-screen flex flex-col items-center ">
         <h1 className="text-4xl font-bold tracking-wide p-4 ">Services</h1>
+        <div className="bg-white h-9"></div>
         <div className="grid grid-cols-8 grid-rows-2 gap-4">
           <div className=" col-start-2 col-span-2">
             <Servicecard
@@ -120,7 +79,7 @@ const Home = () => {
         </div>
         <Package
           name="Hajj/Umrah"
-          para="Embark on a sacred journey with our Hajj and Umra packages. Experience spirituality with carefully curated itineraries."
+          para="Embark on a sacred and transformative journey with our Hajj and Umra packages. Experience profound spirituality with carefully curated itineraries."
           img={hajj}
         />
         <Package

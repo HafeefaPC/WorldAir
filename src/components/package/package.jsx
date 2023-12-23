@@ -2,7 +2,7 @@ import React from "react";
 
 function Package({ img, name, para }) {
   return (
-    <div className="max-w-xs max-h-100 bg-white border border-gray-200 rounded-lg shadow overflow-hidden">
+    <div className="max-w-xs max-h-100 bg-white border border-gray-200 rounded-lg shadow overflow-hidden transition-transform transform hover:scale-105">
       <a href="#">
         <img className="w-full h-40 object-cover" src={img} alt="" />
       </a>
