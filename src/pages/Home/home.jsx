@@ -108,8 +108,16 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white  h-screen flex   items-center ">
-        <h1 className="text-4xl font-bold tracking-wide">Packages</h1>
+      <div className="bg-white h-screen flex items-center overflow-x-auto p-4 space-x-4">
+        <div className="flex flex-col p-3 gap-2">
+          <h1 className="text-4xl font-bold tracking-wide flex-grow">
+            Packages
+          </h1>
+
+          <a href="#" className="text-blue-500 hover:underline">
+            View More
+          </a>
+        </div>
         <Package
           name="Hajj/Umrah"
           para="Embark on a sacred journey with our Hajj and Umra packages. Experience spirituality with carefully curated itineraries."
@@ -122,14 +130,13 @@ const Home = () => {
         />
         <Package
           name="Visa"
-          para="Simplify your travel plans with our visa services. We assist in securing the necessary visas, ensuring a smooth and hassle-free experience for your tourist adventures."
+          para="Simplify your travel plans with our visa services. We assist in obtaining visas for a seamless, stress-free experience on your tourist adventures."
           img={visa}
         />
       </div>
       <Footer />
     </div>
   );
-  x;
 };
 
 export default Home;
