@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import ticket from "../../assets/ticket.svg";
 import curve from "../../assets/curve.svg";
-import travel from "../../assets/travel.svg";
+import flight from "../../assets/flight.png";
+import './ab.css'
 
 const Aboutt = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -32,7 +33,7 @@ const Aboutt = () => {
         <h1 className="text-4xl font-bold tracking-wide z-10">About Us</h1>
         <img src={ticket} className="z-10 relative" alt="Ticket" />
       </div>
-      <img
+      {/* <img
         src={curve}
         className="z-10 relative"
         alt="Curve"
@@ -40,7 +41,7 @@ const Aboutt = () => {
           position: "relative", // Ensures that the curve is contained within the transparent box
           zIndex: 10, // Places the curve on top of the transparent box
         }}
-      />
+      /> */}
       <div
         className="flex items-center justify-between gap-[10rem] z-10 relative"
         onMouseEnter={() => setIsHovered(true)}
@@ -67,8 +68,9 @@ const Aboutt = () => {
             Learn More
           </button>
         </animated.div>
-        <animated.img
-          src={travel}
+        {/* <animated.img
+          src={flight} 
+          id='flight'
           className="z-10 relative"
           alt="Travel"
           style={{
@@ -76,7 +78,7 @@ const Aboutt = () => {
               (x) => `translateX(${x}px)`
             ),
           }}
-        />
+        /> */}
       </div>
     </div>
   );
