@@ -16,7 +16,9 @@ function Servicecard({ name, img, para, style, imgstyle }) {
 
   return (
     <div>
-      <div className={`${style} transition-transform transform hover:scale-105`}>
+      <div
+        className={`${style} transition-transform transform hover:scale-105`}
+      >
         <div className="flex flex-col ml-3 mb-[5rem]">
           <p className="font-montserrat text-[24px] font-semibold leading-29 tracking-wider text-white">
             {name}
@@ -26,7 +28,13 @@ function Servicecard({ name, img, para, style, imgstyle }) {
             dangerouslySetInnerHTML={{ __html: formattedPara }}
           />
         </div>
-        <img src={img} className={imgstyle} alt={name} />
+       
+        <img
+          src={img}
+          className={imgstyle}
+          alt={name}
+        />
+        
       </div>
     </div>
   );

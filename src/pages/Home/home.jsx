@@ -28,47 +28,47 @@ const Home = () => {
       <div className="bg-white w-full h-screen flex flex-col items-center ">
         <h1 className="text-4xl font-bold tracking-wide p-4 ">Services</h1>
         <div className="bg-white h-9"></div>
-        <div className="grid grid-cols-8 grid-rows-2 gap-4">
-          <div className=" col-start-2 col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 sm:grid-rows-4 md:grid-rows-4 lg:grid-rows-2 gap-4">
+          <div className=" relative col-start-2 col-span-2">
             <Servicecard
-              style="flex justify-between gap-1/2 items-center rounded-3xl bg-[#004E89] h-60 w-[100%]"
+              style=" flex justify-between gap-1/2 items-center rounded-3xl bg-[#004E89] h-60 w-[100%]"
               name="Accommodation"
               img={img1}
-              imgstyle="absolute lg:ml-[14.9rem] mt-[8.4rem] sm:mr-[22rem] rounded-3xl"
+              imgstyle="absolute left-[66%] top-[55%] hidden  lg:block  rounded-3xl"
               para="Hotel Reservations Service ApartmentsHouseboat accommodationHome Stays"
             />
           </div>
-          <div className="col-span-3">
+          <div className="md:col-span-2  lg:col-span-3 md:col-start-2 sm:col-start-2 sm:col-span-2 ">
             <Servicecard
-              style="flex justify-between gap-1/2 items-center rounded-3xl bg-[#5885AF] h-60"
+              style="relative flex justify-between gap-1/2 items-center rounded-3xl bg-[#5885AF] h-60"
               name="Tours"
               img={img2}
-              imgstyle="absolute lg:ml-[19rem] mt-[2rem] sm:mr-[22rem] rounded-3xl"
+              imgstyle="absolute left-[55%] hidden lg:block   rounded-3xl"
               para="Inbound & Outbound ToursIncentive ToursVillage ToursSpices & Tea Plantation Tours"
             />
           </div>
-          <div className="col-start-2 col-span-3 row-start-2">
+          <div className="relative col-start-2  sm:col-start-2 md:col-start-2 lg:col-start-2 sm:col-span-2 md:col-span-2 lg:col-span-3 lg:row-start-2 ">
             <Servicecard
-              style="flex justify-between gap-1/2 items-center rounded-3xl bg-[#60A3D9] h-60 "
+              style=" flex justify-between gap-1/2 items-center rounded-3xl bg-[#60A3D9] h-60 "
               name="Accommodation"
               img={img3}
-              imgstyle="absolute lg:ml-[19rem] mt-[2rem] sm:mr-[22rem] rounded-3xl"
+              imgstyle="absolute left-[65%] hidden lg:block  rounded-3xl"
               para="Hotel Reservations Service ApartmentsHouseboat accommodationHome Stays"
             />
           </div>
-          <div className="col-start-5 col-span-">
+          <div className="lg:col-start-5 md:col-start-2 md:row-start-4 sm:row-start-4 sm:col-start-2 lg:row-start-2 ">
             <Servicecard
-              style="flex justify-between gap-1/2 items-center  w-[210%] rounded-3xl bg-[#125D95] h-60 "
+              style="relative flex justify-between gap-1/2 items-center  w-[210%] rounded-3xl bg-[#125D95] h-60 "
               name="Tours"
               img={img4}
-              imgstyle="absolute lg:ml-[12.5rem] mt-[9.4rem] sm:mr-[22rem] rounded-3xl"
+              imgstyle="absolute left-[56.5%] top-[62%] hidden lg:block   rounded-3xl"
               para="Inbound & Outbound ToursIncentive ToursVillage ToursSpices & Tea Plantation Tours"
             />
           </div>
         </div>
       </div>
       <div className="bg-white h-screen flex items-center overflow-x-auto p-4 space-x-4">
-        <div className="flex flex-col p-3 gap-2">
+        <div className="flex flex-col first-letter p-3 gap-2">
           <h1 className="text-4xl font-bold tracking-wide flex-grow">
             Packages
           </h1>

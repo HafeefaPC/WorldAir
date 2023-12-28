@@ -6,24 +6,10 @@ import flight from "../../assets/flight.png";
 import './ab.css'
 
 const Aboutt = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  
 
-  // Define the hover styles for the box
-  const hoverBoxStyles = {
-    translateX: isHovered ? -90 : 0,
-  };
-
-  // Define the hover styles for the travel image
-  const hoverTravelStyles = {
-    translateX: isHovered ? 90 : 0,
-  };
-
-  // Apply the spring animation for the box
-  const boxStyles = useSpring(hoverBoxStyles);
-
-  // Apply the spring animation for the travel image
-  const travelStyles = useSpring(hoverTravelStyles);
-
+ 
+  
   return (
     <div className="bg-white w-full h-full flex flex-col items-center relative">
       {/* Transparent box with light blue background covering the entire page */}
@@ -49,11 +35,7 @@ const Aboutt = () => {
       >
         <animated.div
           className="rounded-md border-2 border-blue-900 p-4 flex flex-col gap-5 items-center z-10 relative"
-          style={{
-            transform: boxStyles.translateX.interpolate(
-              (x) => `translateX(${x}px)`
-            ),
-          }}
+          
         >
           <p className="text-xl text-center">
             Here we arrive as your trusted companion <br /> in the world of
@@ -68,17 +50,7 @@ const Aboutt = () => {
             Learn More
           </button>
         </animated.div>
-        {/* <animated.img
-          src={flight} 
-          id='flight'
-          className="z-10 relative"
-          alt="Travel"
-          style={{
-            transform: travelStyles.translateX.interpolate(
-              (x) => `translateX(${x}px)`
-            ),
-          }}
-        /> */}
+       
       </div>
     </div>
   );
