@@ -5,7 +5,7 @@ body, html {
 }
 
 .background-container {
-    background-image: url("C:/Users/91812/OneDrive/Desktop/WorldAir/Images/contact.jpg"); /* Replace with the actual path to your image */
+    background-image: url("../../assets/Images/contact.jpg"); /* Replace with the actual path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@ body, html {
     box-sizing: border-box; /* Include padding in the width */
     border-radius: 10px;
     margin-left:40%;
-    height: 60% ;
+    height: 80% ;
     text-align: center;
 }
 
