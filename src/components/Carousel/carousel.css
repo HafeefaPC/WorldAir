@@ -1,0 +1,20 @@
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Text color */
+    width: 100%; /* Full width of the image */
+  }
+  
+  .carousel-text h3 {
+    font-size: 30px; /* Header font size */
+    margin-bottom: 10px;
+  }
+  /*  */
+  .carousel-text p {
+    font-size: 18px; /* Paragraph font size */
+    margin: 0;
+  }
+  
