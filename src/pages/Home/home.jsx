@@ -56,7 +56,7 @@ const Home = () => {
               para="Hotel Reservations Service ApartmentsHouseboat accommodationHome Stays"
             />
           </div>
-          <div className="lg:col-start-5 md:col-start-2 md:row-start-4 sm:row-start-4 sm:col-start-2 lg:row-start-2 ">
+          <div className="lg:col-start-5 md:col-span-1 md:col-start-2 md:row-start-4 sm:row-start-4 sm:col-start-2 lg:row-start-2 ">
             <Servicecard
               style="relative flex justify-between gap-1/2 items-center  w-[210%] rounded-3xl bg-[#125D95] h-60 "
               name="Tours"
@@ -67,8 +67,21 @@ const Home = () => {
           </div>
         </div>
       </div>
+    
+      <div className="bg-white lg:hidden sm:h-screen ">
+        <h1 className="text-4xl font-bold block items-center flex-grow">
+          Packages
+        </h1>
+
+        <a
+          href="#"
+          className="flex justify-center text-blue-500 hover:underline"
+        >
+          View More
+        </a>
+      </div>
       <div className="bg-white h-screen flex items-center overflow-x-auto p-4 space-x-4">
-        <div className="flex flex-col first-letter p-3 gap-2">
+        <div className="hidden  lg:flex lg:flex-col first-letter p-3 gap-2">
           <h1 className="text-4xl font-bold tracking-wide flex-grow">
             Packages
           </h1>
@@ -77,21 +90,25 @@ const Home = () => {
             View More
           </a>
         </div>
-        <Package
-          name="Hajj/Umrah"
-          para="Embark on a sacred and transformative journey with our Hajj and Umra packages. Experience profound spirituality with carefully curated itineraries."
-          img={hajj}
-        />
-        <Package
-          name="Hotel Booking"
-          para="Book your ideal stay effortlessly with our hotel booking services. Find comfort and convenience tailored to your preferences and budget."
-          img={hotel}
-        />
-        <Package
-          name="Visa"
-          para="Simplify your travel plans with our visa services. We assist in obtaining visas for a seamless, stress-free experience on your tourist adventures."
-          img={visa}
-        />
+
+        <div className=" grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 first-letter p-3 gap-2">
+          <Package
+            name="Hajj/Umrah"
+            para="Embark on a sacred and transformative journey with our Hajj and Umra packages. Experience profound spirituality with carefully curated itineraries."
+            img={hajj}
+          />
+          <Package
+            name="Hotel Booking"
+            para="Book your ideal stay effortlessly with our hotel booking services. Find comfort and convenience tailored to your preferences and budget."
+            img={hotel}
+            className="grid-col-start-34"
+          />
+          <Package
+            name="Visa"
+            para="Simplify your travel plans with our visa services. We assist in obtaining visas for a seamless, stress-free experience on your tourist adventures."
+            img={visa}
+          />
+        </div>
       </div>
       <Footer />
     </div>

@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import ticket from "../../assets/ticket.svg";
 import curve from "../../assets/curve.svg";
-import flight from "../../assets/flight.png";
-import './ab.css'
+import "./ab.css";
 
 const Aboutt = () => {
-  
+  const [isHovered, setIsHovered] = useState(false);
 
- 
-  
+  const liquidAnimation = useSpring({
+    background: isHovered
+      ? "linear-gradient(to right, #005FA8, transparent)"
+      : "linear-gradient(to right, transparent , #0073C6)",
+    config: { tension: 160, friction: 20 },
+  });
+
   return (
     <div className="bg-white w-full h-full flex flex-col items-center relative">
       {/* Transparent box with light blue background covering the entire page */}
@@ -19,38 +23,46 @@ const Aboutt = () => {
         <h1 className="text-4xl font-bold tracking-wide z-10">About Us</h1>
         <img src={ticket} className="z-10 relative" alt="Ticket" />
       </div>
-      {/* <img
-        src={curve}
-        className="z-10 relative"
-        alt="Curve"
-        style={{
-          position: "relative", // Ensures that the curve is contained within the transparent box
-          zIndex: 10, // Places the curve on top of the transparent box
-        }}
-      /> */}
+
       <div
-        className="flex items-center justify-between gap-[10rem] z-10 relative"
+        className="rounded-md border-2 border-blue-900 p-4 flex flex-col gap-5 items-center z-10 relative overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <animated.div
-          className="rounded-md border-2 border-blue-900 p-4 flex flex-col gap-5 items-center z-10 relative"
-          
-        >
-          <p className="text-xl text-center">
-            Here we arrive as your trusted companion <br /> in the world of
-            exploration, where every second counts <br /> and every connection
-            matters. In the dynamic
-            <br />
-            realm of global commerce, where opportunities <br /> are boundless
-            and distances are mere numbers, <br /> we elevate your journey to
-            new heights.
-          </p>
-          <button className="border-2 border-[#005FA8] hover:bg-[#005FA8] hover:text-white w-1/2 p-2 text-[#005FA8] rounded-3xl transition-all">
-            Learn More
-          </button>
-        </animated.div>
-       
+          className="liquid-mask"
+          style={{
+            height: "100%", // Adjust to the desired height
+            width: "100%",
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            zIndex: 1,
+            ...liquidAnimation,
+          }}
+        ></animated.div>
+        <animated.div
+          className="liquid"
+          style={{
+            background: "#005FA8",
+            height: liquidAnimation.height,
+            width: "100%",
+            position: "relative",
+            zIndex: 2,
+          }}
+        ></animated.div>
+        <p className="text-xl text-center z-10 relative">
+          Here we arrive as your trusted companion <br /> in the world of
+          exploration, where every second counts <br /> and every connection
+          matters. In the dynamic
+          <br />
+          realm of global commerce, where opportunities <br /> are boundless
+          and distances are mere numbers, <br /> we elevate your journey to new
+          heights.
+        </p>
+        <button className="border-2 border-[#005FA8] hover:bg-[#005FA8] hover:text-white w-1/2 p-2 text-[#005FA8] rounded-3xl transition-all z-10 relative">
+          Learn More
+        </button>
       </div>
     </div>
   );
