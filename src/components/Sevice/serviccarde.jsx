@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Servicecard({ name, img, para, style, imgstyle }) {
   // Function to add line breaks after every two words
@@ -15,28 +16,25 @@ function Servicecard({ name, img, para, style, imgstyle }) {
   const formattedPara = addLineBreaks(para);
 
   return (
-    <div>
-      <div
-        className={`${style} transition-transform transform hover:scale-105`}
-      >
-        <div className="flex flex-col ml-3 mb-[5rem]">
-          <p className="font-montserrat text-[24px] font-semibold leading-29 tracking-wider text-white">
-            {name}
-          </p>
-          <p
-            className="font-sans text-base font-semibold leading-tight tracking-tight text-white"
-            dangerouslySetInnerHTML={{ __html: formattedPara }}
-          />
+    <Link to="/service">
+      <div>
+        <div
+          className={`${style} transition-transform transform hover:scale-105`}
+        >
+          <div className="flex flex-col ml-3 mb-[5rem]">
+            <p className="font-montserrat text-[24px] font-semibold leading-29 tracking-wider text-white">
+              {name}
+            </p>
+            <p
+              className="font-sans text-base font-semibold leading-tight tracking-tight text-white"
+              dangerouslySetInnerHTML={{ __html: formattedPara }}
+            />
+          </div>
+
+          <img src={img} className={imgstyle} alt={name} />
         </div>
-       
-        <img
-          src={img}
-          className={imgstyle}
-          alt={name}
-        />
-        
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import ticket from "../../assets/ticket.svg";
 import curve from "../../assets/curve.svg";
+import { Link } from "react-router-dom";
 import "./ab.css";
 
 const Aboutt = () => {
@@ -56,13 +57,15 @@ const Aboutt = () => {
           exploration, where every second counts <br /> and every connection
           matters. In the dynamic
           <br />
-          realm of global commerce, where opportunities <br /> are boundless
-          and distances are mere numbers, <br /> we elevate your journey to new
+          realm of global commerce, where opportunities <br /> are boundless and
+          distances are mere numbers, <br /> we elevate your journey to new
           heights.
         </p>
-        <button className="border-2 border-[#005FA8] hover:bg-[#005FA8] hover:text-white w-1/2 p-2 text-[#005FA8] rounded-3xl transition-all z-10 relative">
-          Learn More
-        </button>
+        <Link to="/about">
+          <button className="border-2 border-[#005FA8] hover:bg-[#005FA8] hover:text-white w-48  p-2 text-[#005FA8] rounded-3xl transition-all z-10 relative">
+            Learn More
+          </button>
+        </Link>
       </div>
     </div>
   );
