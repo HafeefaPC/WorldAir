@@ -51,7 +51,7 @@ const Aboutt = () => {
             zIndex: 2,
           }}
         ></animated.div>
-        <p className="text-xl text-center z-10 relative">
+        <p className="text-xl  z-10 relative">
           Here we arrive as your trusted companion <br /> in the world of
           exploration, where every second counts <br /> and every connection
           matters. In the dynamic

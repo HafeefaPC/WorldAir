@@ -1,0 +1,33 @@
+#containerbg{
+    background-image: url('../../assets/b1.jpg');
+    margin-top: 5%;
+    height: 100vh;
+    background-size: cover;
+    box-shadow: 10px 10px 20px;
+    border-radius: 10%;
+}
+#para
+{
+    justify-content: center;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+    font-size: 20px;
+    padding: 2%;
+}
+@media (max-width: 768px) {
+#para
+{
+    font-size: 14px;
+}
+  }
+  
+  @media (max-width: 576px) {
+    #para{
+        font-size: 12px;
+    }
+   
+  }
+  .content-container{
+    background-color: rgb(0,0,0,0.3);
+    box-shadow: 10px 10px 20px black;
+  }
